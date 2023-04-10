@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produit</title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body >
+  <section id="produit1" class="section-p1" >
+    <h1>Pour les Hommes</h1>
+    <hr style="border: 1px solid #ffc107;">
+    <div class="pro-container" *ngIf="!vue" >
+
+      <div class="grid-container" >
+        <div class="grid-item" style="flex: 0 0 calc(100% / 3);">
+          <div class="row">
+            <div class="col" *ngFor="let produit of HommeHabit" style="display: inline-block; margin-right: 10px;" >
+              <div class="card" (click)="onDetail(produit)" >
+                <div class="pro"  style="width: 300px; height: 400px;" >
+
+                  <a class="like" href="#"><i class="fa fa-heart"></i></a>
+                  <img :src={{produit.img}} alt="pro"> 
+                  <div class="des">
+                  <span>{{produit.marque}}</span>
+                  <h5>{{produit.description}}</h5>
+                  <div class="star">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+              </div>
+                   <h4> {{produit.prix}} </h4>
+                  </div>
+                  <a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div *ngIf="Images" >
+      <div class="grid-container" >
+        <div class="grid-item" style="flex: 0 0 calc(100% / 3);">
+          <div class="row">
+            <div class="col" style="justify-content: center; padding-top: 4% ;">
+              <div class="card"  (click)="OnRetour()">
+                <div class="pro"  style="width: 350px; height: 350px;" >
+                  <img :src={{Images}} style="width: 300px; height: 300px;" alt="pro"> 
+                  <div class="des">
+                  <h5></h5>
+                  </div>
+                 
+              </div>
+                </div>
+                <div class="right">
+                  <div class="url">{{Mark}}</div>
+                  <div class="pname">{{Descrip}}</div>
+                  <div class="ratings">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <div class="price">{{Prixx}}</div>
+                  <div class="size">
+                      <p>Size :</p>
+                      <div class="psize active">M</div>
+                      <div class="psize">L</div>
+                      <div class="psize">XL</div>
+                      <div class="psize">XXL</div>
+                  </div>
+                  <div class="quantity">
+                      <p>Quantity :</p>
+                      <input type="number" min="1" max="" value="1">
+                  </div>
+                  <div class="btn-box">
+                      <button class="cart-btn">Ajouter au Panier</button>
+                      <button class="buy-btn">Acheter Maintenant</button>
+                  </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+   </section>
+</body>
+   
+</html>
